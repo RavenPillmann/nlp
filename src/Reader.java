@@ -7,7 +7,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Reader {
-	public static ArrayList<String> readMultipleTextFiles(ArrayList<String> files) {
+	/**
+	* Returns an ArrayList of file paths in any folder, minus anything in exceptions.
+	*
+	* @param	folderPath	The path of the folder from current working directory
+	* @param	exceptions	A list of exception file names (no path needed)
+	* @return 				An ArrayList of file paths
+	*/
+	public static ArrayList<String> getListOfFilePathsFromFolder(String folderPath, ArrayList<String> exceptions) {
+		// TODO:
+		// Catch case where there are no exceptions
+		// Get all files in folder, remove anything in exceptions
+		// Return array
+	}
+
+	public static ArrayList<String> readMultipleTextFiles(ArrayList<String> filePaths) {
 		ArrayList<String> lines = new ArrayList<String>();
 
 		for(int i = 0; i < files.size(); i++) {
