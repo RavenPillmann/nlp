@@ -4,30 +4,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Tokenizer {
-	private String inputString;
-	private ArrayList<String> tokens;
-
-	public Tokenizer(String inputString) {
-		this.inputString = inputString;
-	}
-
-	public void tokenize() {
+	public static ArrayList<String> tokenize(String inputString) {
 		Pattern tokenPattern = Pattern.compile("((\\w)+'{0,1}(\\w)+)|[(\\.),(\\?)!:;\"']");
-		this.tokens = new ArrayList<String>();
+		ArrayList<String> tokens = new ArrayList<String>();
 
-		Matcher tokenMatcher = tokenPattern.matcher(this.inputString);
+		Matcher tokenMatcher = tokenPattern.matcher(inputString);
 
 		while (tokenMatcher.find()) {
-			this.tokens.add(tokenMatcher.group());
+			tokens.add(tokenMatcher.group());
 		}
+
+		return tokens;
 
 		// Tokenize
 		// Regex should separate out words as well as punctuation, but not punctuation the is contained within words.
 		// Also, numbers
-	}
-
-	public ArrayList getTokens() {
-		return this.tokens;
 	}
 
 	public static void main(String[] args) {
@@ -37,10 +28,7 @@ public class Tokenizer {
 
 		String input = sc.nextLine();
 
-		Tokenizer tokenizer = new Tokenizer(input);
-		tokenizer.tokenize();
-
-		System.out.println(tokenizer.tokens);
+		System.out.println(Tokenizer.tokenize(input));
 
 		sc.close();
 	}
