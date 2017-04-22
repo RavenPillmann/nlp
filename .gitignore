@@ -1,3 +1,7 @@
 # Compiled Files #
 ##################
 *.class
+
+# Directories #
+##################
+brownCorpus
