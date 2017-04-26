@@ -2,6 +2,8 @@
 * Reader for breaking text files into lines that can be handled in whatever way we see fit.
 */
 
+package nlp;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.ArrayList;
