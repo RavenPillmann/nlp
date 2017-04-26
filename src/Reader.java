@@ -25,7 +25,6 @@ public class Reader {
 			for (int i = 0; i < listOfContents.length; i++) {
 				String contentName = listOfContents[i].getName(); // TODO: DOES THIS RETURN THE FILE EXTENSION???
 
-				System.out.println("contentName: " + contentName);
 				if (listOfContents[i].isFile() && !exceptions.contains(contentName)) {
 					filePaths.add(listOfContents[i].getAbsolutePath());
 				}
@@ -38,6 +37,12 @@ public class Reader {
 		return filePaths;
 	}
 
+	/**
+	* Returns an ArrayList of lines from multiple files
+	*
+	* @param	filePaths 	File paths to read
+	* @return 				An ArrayList of ArrayLists
+	*/
 	public static ArrayList<String> readMultipleTextFiles(ArrayList<String> filePaths) {
 		ArrayList<String> lines = new ArrayList<String>();
 
@@ -48,6 +53,12 @@ public class Reader {
 		return lines;
 	}
 
+	/**
+	* Return an ArrayList of lines from a single file
+	*
+	* @param	filePath 	File path to a single file
+	* @return 				An ArrayList of strings, where each string is a line in a file
+	*/
 	public static ArrayList<String> readSingleTextFile(String filePath) {
 		ArrayList<String> lines = new ArrayList<String>();
 
@@ -78,10 +89,14 @@ public class Reader {
 
 		// System.out.println("Enter a file path");
 
-		System.out.println("files: ");
-
-		ArrayList<String> temp = new ArrayList<String>();
+		ArrayList<String> temp = new ArrayList<String>(Arrays.asList("CONTENTS", "README", "cats.txt"));
 		ArrayList<String> files = Reader.getListOfFilePathsFromFolder("../brownCorpus", temp);
+		ArrayList<String> lines = Reader.readMultipleTextFiles(files);
+
+		System.out.println("Lines: ");
+		for (String line : lines) {
+			System.out.println(line);
+		}
 
 		sc.close();
 	}	
