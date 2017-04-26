@@ -87,16 +87,21 @@ public class Reader {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		// System.out.println("Enter a file path");
+		System.out.println("Enter a folder path");
 
-		ArrayList<String> temp = new ArrayList<String>(Arrays.asList("CONTENTS", "README", "cats.txt"));
+		String folderPath = sc.nextLine();
+
+		System.out.println("Enter any exceptions (names of files to not read) separated by spaces");
+
+		String exceptionsString = sc.nextLine();
+
+		String[] exceptions = exceptionsString.split("\\s+");
+
+		ArrayList<String> temp = new ArrayList<String>(Arrays.asList(exceptions));
 		ArrayList<String> files = Reader.getListOfFilePathsFromFolder("../brownCorpus", temp);
 		ArrayList<String> lines = Reader.readMultipleTextFiles(files);
 
-		System.out.println("Lines: ");
-		for (String line : lines) {
-			System.out.println(line);
-		}
+		System.out.println("There are " + Integer.toString(lines.size()) + " lines in this folder");
 
 		sc.close();
 	}	
