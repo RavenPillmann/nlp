@@ -98,7 +98,7 @@ public class Reader {
 		String[] exceptions = exceptionsString.split("\\s+");
 
 		ArrayList<String> temp = new ArrayList<String>(Arrays.asList(exceptions));
-		ArrayList<String> files = Reader.getListOfFilePathsFromFolder("../brownCorpus", temp);
+		ArrayList<String> files = Reader.getListOfFilePathsFromFolder(folderPath, temp);
 		ArrayList<String> lines = Reader.readMultipleTextFiles(files);
 
 		System.out.println("There are " + Integer.toString(lines.size()) + " lines in this folder");
