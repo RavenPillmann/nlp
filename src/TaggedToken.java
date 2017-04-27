@@ -8,4 +8,9 @@ public class TaggedToken {
 		token = token;
 		tag = tag;
 	}
+
+	// TODO: Use string formatter
+	public String toString() {
+		return this.token + " " + this.tag;
+	}
 }

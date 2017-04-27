@@ -10,6 +10,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Reader {
+
+	/**
+	* Overall method that extracts lines from a given folderPath
+	* 
+	* @param	folderPath	The path of the folder
+	* @param	exceptions 	A list of exception file names (no path)
+	* @return 				An ArrayList of lines
+	*/
+	public static ArrayList<String> readLinesFromFolder(String folderPath, ArrayList<String> exceptions) {
+		ArrayList<String> filePaths = Reader.getListOfFilePathsFromFolder(folderPath, exceptions);
+		ArrayList<String> lines = Reader.readMultipleTextFiles(filePaths);
+
+		return lines;
+	}
+
 	/**
 	* Returns an ArrayList of file paths in any folder, minus anything in exceptions.
 	*
