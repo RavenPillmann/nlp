@@ -87,7 +87,11 @@ public class Reader {
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 			while((currentLine = bufferedReader.readLine()) != null) {
-				lines.add(currentLine);
+				// Preprocess the lines by trimming them and discarding empties
+				String trimmedCurrentLine = currentLine.trim();
+				if (!trimmedCurrentLine.equals("")) {
+					lines.add(trimmedCurrentLine);
+				}
 			}
 
 			bufferedReader.close();

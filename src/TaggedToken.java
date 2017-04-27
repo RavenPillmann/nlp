@@ -5,8 +5,8 @@ public class TaggedToken {
 	public String tag;
 
 	public TaggedToken(String token, String tag) {
-		token = token;
-		tag = tag;
+		this.token = token;
+		this.tag = tag;
 	}
 
 	// TODO: Use string formatter

@@ -20,14 +20,8 @@ public class Parser {
 	}
 
 	public static void main(String[] args) {
-		// FOR TESTING PURPOSES
-		//
-		// get files from folder
-		// read lines from all files
-		// Put lines into Parser.createTagsFromBrownCorpus
-		// print out tags
-
 		ArrayList<String> lines = Reader.readLinesFromFolder("../brownCorpus", new ArrayList<String>(Arrays.asList("CONTENTS", "README", "cats.txt")));
+
 		ArrayList<TaggedToken> taggedTokens = Parser.createTagsFromBrownCorpus(lines);
 
 		for (TaggedToken taggedToken : taggedTokens) {
