@@ -12,6 +12,6 @@ A Java package for Natural Language Processing. Meant to be more of an explorati
 
 - http://www.cs.columbia.edu/~mcollins/courses/nlp2011/notes/hmms.pdf
 
-### Forward-Backwards Algorithm
+### Forward-Backward Algorithm
 
 - https://www.youtube.com/watch?v=7zDARfKVm7s
