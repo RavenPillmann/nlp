@@ -8,6 +8,10 @@ A Java package for Natural Language Processing. Meant to be more of an explorati
 
 ## Consulted sources
 
+### Main Source
+
+- Speech and Language Processing (Jurafsky & Martin)
+
 ### Hidden Markov Models
 
 - http://www.cs.columbia.edu/~mcollins/courses/nlp2011/notes/hmms.pdf
