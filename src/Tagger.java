@@ -1,21 +1,21 @@
 package nlp;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
+import java.util.HashMap;
 
 public class Tagger {
 
 	/**
-	* Returns a Hashtable of Tags: Counts
+	* Returns a HashMap of Tags: Counts
 	*
 	* @param	taggedTokens 	An ArrayList of TaggedToken objects
-	* @return 					A Hashtable of Tags: Counts
+	* @return 					A HashMap of Tags: Counts
 	*/
-	public static Hashtable getTagsAndCounts(ArrayList<TaggedToken> taggedTokens) {
-		Hashtable tags = new Hashtable();
+	public static HashMap<String,Integer> getTagsAndCounts(ArrayList<TaggedToken> taggedTokens) {
+		HashMap tags = new HashMap<String,Integer>();
 
 		for (TaggedToken taggedToken : taggedTokens ) {
-			String tag = taggedToken.getTag;
+			String tag = taggedToken.getTag();
 
 			if (!tags.containsKey(tag)) {
 				tags.put(tag, 0);
@@ -27,6 +27,13 @@ public class Tagger {
 
 		return tags;
 	}
+
+	/**
+	* Returns a HashMap of transition probabilities
+	*
+	* @param	taggedTokens	An ArrayList of TaggedToken objects, assumed to be in the correct order
+	* @return 					A HashMap in which each key is a main tag and each value is a hashMap, in which each key is a tag preceeding the main tag
+	*/
 
 	public static Integer[][] createTransitionMatrix(ArrayList<TaggedToken> taggedTokens) {
 		// TODO:
