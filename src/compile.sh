@@ -1,1 +1,1 @@
-javac -sourcepath . -d . Reader.java TaggedToken.java Tokenizer.java Parser.java Tagger.java TransitionMatrix.java ${1}
+javac -sourcepath . -d . Reader.java TaggedToken.java Tokenizer.java Parser.java Tagger.java TransitionMatrix.java EmissionMatrix.java ${1}

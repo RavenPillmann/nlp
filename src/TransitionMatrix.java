@@ -41,7 +41,7 @@ public class TransitionMatrix {
 	}
 
 	/**
-	* Returns a HashMap or Hashmaps of Tags: [Preceeding Tag: Counts]
+	* Returns a HashMap of Hashmaps of Tags: [Preceeding Tag: Counts]
 	*
 	* @param	taggedTokens	An ArrayList of TaggedToken objects (assumed to be in the order written)
 	* @return 					A HashMap of Hashmaps with counts of tag transitions,
