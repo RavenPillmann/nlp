@@ -10,14 +10,16 @@ public class Parser {
 		for (String line : lines) {
 			String[] rawTaggedTokenStrings = line.split("\\s+");
 
-			// for (String rawTaggedTokenString : rawTaggedTokenStrings) {
 			for (int i = 0; i < rawTaggedTokenStrings.length; i++) {
 				String rawTaggedTokenString = rawTaggedTokenStrings[i];
 				String[] tokenAndTag = rawTaggedTokenString.split("/");
 
 				boolean isStarter = i == 0;
 
-				taggedTokens.add(new TaggedToken(tokenAndTag[0], tokenAndTag[1], isStarter));
+				// TODO: TEST THIS!
+				boolean isEnder = i == rawTaggedTokenStrings.length - 1;
+
+				taggedTokens.add(new TaggedToken(tokenAndTag[0], tokenAndTag[1], isStarter, isEnder));
 			}
 		}
 

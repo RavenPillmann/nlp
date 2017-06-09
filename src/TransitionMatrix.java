@@ -6,9 +6,10 @@ import java.util.HashMap;
 // For testing in main class only
 import java.util.Arrays;
 
-public class TransitionMatrix {
+public class TransitionMatrix extends HashMap {
 	public static final String TOTAL = "total";
 	public static final String START_OF_SENTENCE = "start";
+	public static final String END_OF_SENTENCE = "end";
 
 	private HashMap<String,HashMap<String,Integer>> transitionMatrix;
 
@@ -54,6 +55,7 @@ public class TransitionMatrix {
 		for (TaggedToken taggedToken : taggedTokens) {
 			String tag = taggedToken.getTag();
 			boolean isStarter = taggedToken.isStarter();
+			boolean isEnder = taggedToken.isEnder();
 
 			if (isStarter) {
 				lastTag = START_OF_SENTENCE;
@@ -77,6 +79,18 @@ public class TransitionMatrix {
 
 				int newTotal = transitions.get(TOTAL) + 1;
 				transitions.put(TOTAL, newTotal);
+			}
+
+			if (isEnder) {
+				HashMap<String, Integer> transitions = tagTransitions.get(tag);
+
+				int newEnderCount = 1;
+
+				if (transitions.containsKey(END_OF_SENTENCE)) {
+					newEnderCount = transitions.get(END_OF_SENTENCE) + 1;
+				}
+
+				transitions.put(END_OF_SENTENCE, newEnderCount);
 			}
 
 			lastTag = tag;

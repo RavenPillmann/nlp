@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 // A class for calculating P(Word | POS)
-public class EmissionMatrix {
+public class EmissionMatrix extends HashMap {
 	public static final String TOTAL = "total";
 
 	private HashMap<String,HashMap<String,Integer>> emissionMatrix;
@@ -61,7 +61,7 @@ public class EmissionMatrix {
 	* @param  	tag 			The emitting tag
 	* @return 					A probability of the tag emitting a token
 	*/
-	public double getProabilityFromEmissionHashMap(String token, String tag) {
+	public double getProbabilityFromEmissionHashMap(String token, String tag) {
 		double probability = 1.0;
 
 		if (this.emissionMatrix.containsKey(token)) {

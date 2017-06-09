@@ -7,8 +7,19 @@ import java.util.Arrays;
 
 public class Tagger {
 
+	// Momentarily returning void because I'm not sure what I want out of this...
+	private static double[][] viterbiForwardStep(double[][] scoreMatrix, TransitionMatrix transitionMatrix, EmissionMatrix emissionMatrix) {
+		return scoreMatrix;
+	}
+
 	public static ArrayList<TaggedToken> viterbi(String input, ArrayList<TaggedToken> trainingSet) {
-		// TODO
+		TransitionMatrix transitionMatrix = new TransitionMatrix(trainingSet);
+		EmissionMatrix emissionMatrix = new EmissionMatrix(trainingSet);
+
+		double[][] scoreMatrix = new double[transitionMatrix.size()][input.length()];
+
+		double[][] forwardScoreMatrix = viterbiForwardStep(scoreMatrix, transitionMatrix, emissionMatrix);
+
 		return new ArrayList<TaggedToken>();
 	}
 
