@@ -12,7 +12,7 @@ public class Tagger {
 	public static final String END_OF_SENTENCE = "end";
 
 	private static double[][] viterbiForwardStep(double[][] scoreMatrix, TransitionMatrix transitionMatrix, EmissionMatrix emissionMatrix, ArrayList<String> input) {
-		String[] tags = transitionMatrix.keySet().toArray(new String[transitionMatrix.keySet().size()]);
+		String[] tags = (String[]) transitionMatrix.keySet().toArray(new String[transitionMatrix.keySet().size()]);
 
 		for (int column = 0; column < input.size(); column++) {
 			for (int row = 0; row < scoreMatrix.length; row++) {
